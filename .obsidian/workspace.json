@@ -1,0 +1,207 @@
+{
+  "main": {
+    "id": "fb1fd69f820ba4cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "b99f1ac6ce1d47bd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e831196c9b86a3a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 Enumeration/03 HTTP 80 OR HTTPS 443.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "03 HTTP 80 OR HTTPS 443"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "aa1868889c098066",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b0a86ad9f25cf80",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0ba29b184474d52c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "fb45657a866d3e78",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "wpscan",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3a3a47282797af83",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "6ea439f05d0083de",
+    "type": "split",
+    "children": [
+      {
+        "id": "98434ebfe50c46b5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59453a563a334421",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "04 Stabilizing Shell, Searching & Transferring Files/03.01 Stabilizing Shell.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 03.01 Stabilizing Shell"
+            }
+          },
+          {
+            "id": "82afa0469f2aefdb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01 Enumeration/03 HTTP 80 OR HTTPS 443.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 03 HTTP 80 OR HTTPS 443"
+            }
+          },
+          {
+            "id": "0349b87cc0224a00",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7d8ba33423a353eb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01 Enumeration/03 HTTP 80 OR HTTPS 443.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 03 HTTP 80 OR HTTPS 443"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e831196c9b86a3a7",
+  "lastOpenFiles": [
+    "OSCP-Notebook/README.md",
+    "OSCP-Notebook",
+    "03 Initial Foothold/SQLi.md",
+    "Logs/2024-01-03_openadmin.txt",
+    "Logs/2024-01-03_blackfield.txt",
+    "Logs/New Text Document.txt",
+    "Logs",
+    "New folder",
+    "01 Enumeration/Logs",
+    "01 Enumeration/New folder",
+    "03 Initial Foothold/Command injection.md",
+    "03 Initial Foothold/Bruteforcing & Wordlist generation.md",
+    "01 Enumeration/03 HTTP 80 OR HTTPS 443.md",
+    "06 Post Exploitation/Hash Cracking.md",
+    "05 PrivEsc/Linux.md",
+    "01 Enumeration/MySQL 3306.md",
+    "06 Post Exploitation/transferring files.md",
+    "04 Stabilizing Shell, Searching & Transferring Files/03.01 Stabilizing Shell.md",
+    "01 Enumeration/02 Fuzzing.md",
+    "01 Enumeration/01 Port Scans.md",
+    "05 PrivEsc/windoh.md",
+    "02 Windowss/04 SMB 139,445.md",
+    "02 Windowss/01 No Creds.md",
+    "02 Windowss/02 Have potential users, need pw.md",
+    "06 Post Exploitation/Spraying & Enumerating AD.md",
+    "02 Windowss/03 low-level creds.md",
+    "05 PrivEsc/Python files.md",
+    "01 Enumeration/04 SNMP 161.md",
+    "02 Windowss/RDP 3389.md",
+    "Code Analysis/System Execution.md",
+    "Code Analysis/Linux commands.md",
+    "Code Analysis/File inclusion LFI RFI.md",
+    "01 Enumeration/SSH 22.md",
+    "Code Analysis/vim.md",
+    "Code",
+    "01 Enumeration/postgresql",
+    "06 Pivoting/Pasted image 20240515085017.png"
+  ]
+}
