@@ -196,6 +196,11 @@ systeminfo | findstr /B /C:"Host Name" /C:"OS Name" /C:"OS Version" /C:"System T
 cmdkey /list
 ```
 
+***check autologon creds in registry:***
+```
+Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' | Select-Object DefaultUserName, DefaultPassword, AutoAdminLogon
+```
+
 ***current user group memberships:***
 ```
 net user <current-user>
@@ -708,3 +713,17 @@ mount -t drvfs C: /mnt/c
 cd /mnt/c/Users/Administrator/Desktop
 ```
 - might be able to access admin (or may need to combine with another privesc)
+
+#### nt authority\system but flag says access denied
+```
+takeown /f "C:\Users\Administrator\Desktop\root.txt"
+```
+- takes ownership of file
+```
+dir /q "C:\Users\Administrator\Desktop\root.txt"
+```
+- should show nt authority\system as owner
+```
+icacls "C:\Users\Administrator\Desktop\root.txt" /grant SYSTEM:F
+```
+- grants system user (yourself) full access

@@ -19,6 +19,7 @@ feroxbuster -u http://10.129.208.228:50000/ -w /usr/share/seclists/Discovery/Web
 feroxbuster -u http://10.129.208.228:50000/ -w /usr/share/seclists/Discovery/Web-Content/common.txt
 ```
  - this ones includes .git
+ 
  include php & html extensions:
  ```
 feroxbuster -u https://streamio.htb -x php,html -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories-lowercase.txt -k
