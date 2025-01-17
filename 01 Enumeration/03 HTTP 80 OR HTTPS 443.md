@@ -152,6 +152,15 @@ also try nc instead of responder:
 nc -lvnp 80
 ```
 - put in IP of kali `http://10.10.14.172/test` and see if receive any packets
+- use burp to look at response and maybe get info on service
+for a text box link that pulls a file and converts to pdf:
+```
+python -m http.server 80
+```
+- then use exiftool to see metadata and see what tool was used:
+```
+exiftool filename.pdf
+```
 
 ***PHP site***
 LFI with php filter

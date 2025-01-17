@@ -5,7 +5,7 @@ nmap -F ip
 
 most efficient with no loss of quality scan:
 ```
-sudo nmap -Pn -n 10.129.167.212 -sCV -p- --open -vvv
+sudo nmap -Pn -n 10.129.228.98 -sCV -p- --open -vvv
 ```
 
 if notice different ports between `-F` and quality scan:
@@ -20,7 +20,7 @@ nmap -p 22,25,80,110,119,4555 -sCV 10.10.10.51 -vvv
 
 if IP redirects to http site, rescan with redirect name
 ```
-sudo nmap -p 22,80 -sCV devvortex.htb -vvv
+sudo nmap -p 22,80 -sCV precious.htb -vvv
 ```
 - might find other things such as .git repositories, etc
 

