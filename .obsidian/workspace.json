@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Code Analysis/vim.md",
+                "file": "05 PrivEsc/windoh.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "vim"
+              "title": "windoh"
             }
           }
         ],
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ssrf",
+                "query": "bypass",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -180,23 +180,29 @@
   },
   "active": "fba1e5dd65f9ae7d",
   "lastOpenFiles": [
-    "Logs/2024-01-16_precious.txt",
+    "Logs/2024-01-19_sniper.txt",
     "Logs/New Text Document.txt",
+    "06 Post Exploitation/transferring files.md",
+    "05 PrivEsc/windoh.md",
+    "02 Windowss/03 low-level creds.md",
+    "02 Windowss/01 No Creds.md",
+    "02 Windowss/04 SMB 139,445.md",
+    "01 Enumeration/03 HTTP 80 OR HTTPS 443.md",
+    "Code Analysis/File inclusion LFI RFI.md",
+    "01 Enumeration/02 Fuzzing.md",
+    "02 Windowss/05 RPC 135.md",
+    "01 Enumeration/01 Port Scans.md",
+    "Code Analysis/vim.md",
+    "Logs/2024-01-16_precious.txt",
     "Logs/New folder",
     "Code Analysis/System Execution.md",
     "Code Analysis/Linux commands.md",
-    "Code Analysis/File inclusion LFI RFI.md",
-    "01 Enumeration/03 HTTP 80 OR HTTPS 443.md",
     "05 PrivEsc/Linux.md",
     "04 Stabilizing Shell, Searching & Transferring Files/03.02 Searching for flags.md",
     "04 Stabilizing Shell, Searching & Transferring Files/03.01 Stabilizing Shell.md",
-    "01 Enumeration/02 Fuzzing.md",
-    "01 Enumeration/01 Port Scans.md",
-    "05 PrivEsc/windoh.md",
     "Logs/2024-01-13_chatterbox.txt",
     "03 Initial Foothold/Shell Generation.md",
     "03 Initial Foothold/Bruteforcing & Wordlist generation.md",
-    "06 Post Exploitation/transferring files.md",
     "OSCP-Notebook/README.md",
     "OSCP-Notebook",
     "03 Initial Foothold/SQLi.md",
@@ -205,17 +211,11 @@
     "Logs",
     "New folder",
     "01 Enumeration/Logs",
-    "01 Enumeration/New folder",
     "03 Initial Foothold/Command injection.md",
     "06 Post Exploitation/Hash Cracking.md",
     "01 Enumeration/MySQL 3306.md",
-    "02 Windowss/04 SMB 139,445.md",
-    "02 Windowss/01 No Creds.md",
     "02 Windowss/02 Have potential users, need pw.md",
     "06 Post Exploitation/Spraying & Enumerating AD.md",
-    "02 Windowss/03 low-level creds.md",
-    "05 PrivEsc/Python files.md",
-    "01 Enumeration/04 SNMP 161.md",
     "06 Pivoting/Pasted image 20240515085017.png"
   ]
 }

